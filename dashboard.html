@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | Campus Event & Club Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🏛️</div>
+        <span>Campus Hub</span>
+      </a>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="clubs.html" class="nav-link">Clubs</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="dashboard.html" class="nav-cta active">Student Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="container">
+        
+        <!-- Dashboard Header Card -->
+        <div class="dashboard-header-card">
+          <div class="dashboard-user-info">
+            <div class="dashboard-avatar">🎓</div>
+            <div>
+              <h1 style="font-size: 2rem; font-weight: 800; line-height: 1.2;">Welcome back, Alex Student!</h1>
+              <p style="color: #cbd5e1; font-size: 0.95rem; margin-top: 0.25rem;">
+                UNI-2026-8891 • Department of Computer Science & Engineering (3rd Year)
+              </p>
+            </div>
+          </div>
+          <div>
+            <a href="events.html" class="btn btn-outline-light btn-sm">+ Register for Event</a>
+          </div>
+        </div>
+
+        <!-- Dashboard Stats Row -->
+        <div class="dash-stats-grid">
+          <div class="dash-stat-card">
+            <div class="dash-stat-icon events">🎟️</div>
+            <div>
+              <div class="dash-stat-val" id="dashStatsEvents">0</div>
+              <div class="dash-stat-lbl">Registered Events</div>
+            </div>
+          </div>
+
+          <div class="dash-stat-card">
+            <div class="dash-stat-icon events" style="background-color: #f0fdf4; color: #16a34a;">📅</div>
+            <div>
+              <div class="dash-stat-val" id="dashStatsUpcoming">0</div>
+              <div class="dash-stat-lbl">Upcoming Events</div>
+            </div>
+          </div>
+
+          <div class="dash-stat-card">
+            <div class="dash-stat-icon clubs">🏛️</div>
+            <div>
+              <div class="dash-stat-val" id="dashStatsClubs">0</div>
+              <div class="dash-stat-lbl">Joined Clubs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1: My Upcoming Registered Events -->
+        <div class="dashboard-section">
+          <div class="dashboard-section-title">
+            <span>My Upcoming Events</span>
+            <a href="events.html" class="btn btn-secondary btn-sm">Browse All Events</a>
+          </div>
+          <div class="cards-grid" id="myEventsGrid">
+            <!-- Rendered by js/dashboard.js -->
+          </div>
+        </div>
+
+        <!-- Section 2: My Joined Clubs -->
+        <div class="dashboard-section">
+          <div class="dashboard-section-title">
+            <span>My Joined Clubs</span>
+            <a href="clubs.html" class="btn btn-secondary btn-sm">Browse All Clubs</a>
+          </div>
+          <div class="clubs-grid" id="myClubsGrid">
+            <!-- Rendered by js/dashboard.js -->
+          </div>
+        </div>
+
+        <!-- Section 3: Registration History Table -->
+        <div class="dashboard-section">
+          <div class="dashboard-section-title">
+            <span>Registration History</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Reg ID</th>
+                  <th>Event Name</th>
+                  <th>Event Date</th>
+                  <th>Date Registered</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="regTableBody">
+                <!-- Rendered by js/dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🏛️</div>
+            <span>Campus Hub</span>
+          </a>
+          <p class="footer-desc">
+            The central platform for university student events, club discovery, and campus community engagement.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="clubs.html">Student Clubs</a></li>
+            <li><a href="register.html">Event Registration</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="events.html">Technical Workshops</a></li>
+            <li><a href="events.html">Hackathons</a></li>
+            <li><a href="events.html">Cultural Fests</a></li>
+            <li><a href="events.html">Sports Championships</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Support</h4>
+          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+            📍 Student Activity Center, Building B<br>
+            ✉️ campushub@university.edu<br>
+            📞 +1 (555) 019-2834
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Campus Event & Club Hub. All rights reserved. Software Engineering Student Project.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

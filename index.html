@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Event & Club Hub | Discover Campus Life</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🏛️</div>
+        <span>Campus Hub</span>
+      </a>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="clubs.html" class="nav-link">Clubs</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="dashboard.html" class="nav-cta">Student Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>✨</span> Student Engagement & Community Platform
+          </div>
+          <h1 class="hero-title">
+            Discover What's Happening on <span>Campus</span>
+          </h1>
+          <p class="hero-description">
+            Find upcoming events, explore student clubs, and participate in activities happening around your university. Stay connected with campus life.
+          </p>
+          <div class="hero-buttons">
+            <a href="events.html" class="btn btn-primary btn-lg">Explore Events →</a>
+            <a href="clubs.html" class="btn btn-outline-light btn-lg">Explore Clubs</a>
+          </div>
+        </div>
+
+        <div class="hero-illustration">
+          <div class="hero-card-preview">
+            <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #93c5fd; margin-bottom: 1rem;">
+              🔥 Happening This Week
+            </div>
+
+            <div class="hero-preview-item">
+              <div class="hero-preview-icon" style="background-color: #2563eb;">🚀</div>
+              <div style="color: white;">
+                <div style="font-weight: 700; font-size: 1rem;">Tech Innovation Summit</div>
+                <div style="font-size: 0.825rem; color: #cbd5e1;">Sep 15 • Main Auditorium</div>
+              </div>
+            </div>
+
+            <div class="hero-preview-item">
+              <div class="hero-preview-icon" style="background-color: #0d9488;">💻</div>
+              <div style="color: white;">
+                <div style="font-weight: 700; font-size: 1rem;">Inter-College Hackathon</div>
+                <div style="font-size: 0.825rem; color: #cbd5e1;">Oct 02 • Innovation Lab</div>
+              </div>
+            </div>
+
+            <div class="hero-preview-item">
+              <div class="hero-preview-icon" style="background-color: #ec4899;">🎭</div>
+              <div style="color: white;">
+                <div style="font-weight: 700; font-size: 1rem;">Cultural Fest 2026</div>
+                <div style="font-size: 0.825rem; color: #cbd5e1;">Oct 20 • Open Air Theatre</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Events</h2>
+          <p class="section-subtitle">Check out top upcoming hackathons, tech summits, cultural fests, and workshops.</p>
+        </div>
+
+        <div class="cards-grid" id="homeFeaturedEventsGrid">
+          <!-- Featured Event 1 -->
+          <div class="event-card">
+            <div class="event-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" alt="Tech Innovation Summit" class="event-image">
+              <span class="event-category-badge">Technical</span>
+              <span class="event-seats-badge">Seats Available</span>
+            </div>
+            <div class="event-body">
+              <div class="event-meta">
+                <span>📅 Sep 15, 2026</span>
+                <span>⏰ 09:00 AM</span>
+              </div>
+              <h3 class="event-title">Tech Innovation Summit 2026</h3>
+              <p class="event-description">Keynote talks from industry leaders, AI innovation showcases, and interactive software development labs.</p>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">📍 Main Campus Auditorium</div>
+              <div class="event-footer">
+                <a href="event-details.html?id=1" class="btn btn-secondary btn-sm">View Details</a>
+                <a href="register.html?eventId=1" class="btn btn-primary btn-sm">Register Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Event 2 -->
+          <div class="event-card">
+            <div class="event-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Inter-College Hackathon" class="event-image">
+              <span class="event-category-badge">Competition</span>
+              <span class="event-seats-badge">Seats Available</span>
+            </div>
+            <div class="event-body">
+              <div class="event-meta">
+                <span>📅 Oct 02, 2026</span>
+                <span>⏰ 08:00 AM</span>
+              </div>
+              <h3 class="event-title">Inter-College Hackathon 2026</h3>
+              <p class="event-description">24-hour intense coding challenge where teams solve real-world sustainability and healthcare problems.</p>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">📍 Student Innovation Center</div>
+              <div class="event-footer">
+                <a href="event-details.html?id=2" class="btn btn-secondary btn-sm">View Details</a>
+                <a href="register.html?eventId=2" class="btn btn-primary btn-sm">Register Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Event 3 -->
+          <div class="event-card">
+            <div class="event-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Cultural Fest" class="event-image">
+              <span class="event-category-badge">Cultural</span>
+              <span class="event-seats-badge">Seats Available</span>
+            </div>
+            <div class="event-body">
+              <div class="event-meta">
+                <span>📅 Oct 20, 2026</span>
+                <span>⏰ 04:00 PM</span>
+              </div>
+              <h3 class="event-title">Grand Cultural Fest 2026</h3>
+              <p class="event-description">Celebration of music, dance, drama, and fine arts featuring live band performances and inter-department showcases.</p>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">📍 Open Air Theatre</div>
+              <div class="event-footer">
+                <a href="event-details.html?id=3" class="btn btn-secondary btn-sm">View Details</a>
+                <a href="register.html?eventId=3" class="btn btn-primary btn-sm">Register Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="events.html" class="btn btn-secondary btn-lg">View All Campus Events →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Clubs Section -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Popular Student Clubs</h2>
+          <p class="section-subtitle">Join active student organizations to gain leadership skills, make friends, and build real-world projects.</p>
+        </div>
+
+        <div class="clubs-grid">
+          <!-- Club 1 -->
+          <div class="club-card">
+            <div class="club-header">
+              <div class="club-logo">CC</div>
+              <div class="club-info">
+                <span class="club-category">Technical</span>
+                <h3 class="club-title">Coding Club</h3>
+              </div>
+            </div>
+            <p class="club-desc">Master data structures, algorithms, open-source projects, and competitive programming competitions.</p>
+            <div class="club-stats-bar">
+              <span>👥 145 Members</span>
+              <span>📅 Fridays 4:30 PM</span>
+            </div>
+            <div class="club-actions">
+              <a href="club-details.html?id=1" class="btn btn-secondary btn-sm btn-full">View Club</a>
+            </div>
+          </div>
+
+          <!-- Club 2 -->
+          <div class="club-card">
+            <div class="club-header">
+              <div class="club-logo" style="background: linear-gradient(135deg, #0d9488, #0f172a);">RC</div>
+              <div class="club-info">
+                <span class="club-category">Technical</span>
+                <h3 class="club-title">Robotics & AI Club</h3>
+              </div>
+            </div>
+            <p class="club-desc">Designing autonomous hardware platforms, IoT systems, computer vision rovers, and drone technology.</p>
+            <div class="club-stats-bar">
+              <span>👥 92 Members</span>
+              <span>📅 Wednesdays 3:30 PM</span>
+            </div>
+            <div class="club-actions">
+              <a href="club-details.html?id=2" class="btn btn-secondary btn-sm btn-full">View Club</a>
+            </div>
+          </div>
+
+          <!-- Club 3 -->
+          <div class="club-card">
+            <div class="club-header">
+              <div class="club-logo" style="background: linear-gradient(135deg, #d97706, #0f172a);">PC</div>
+              <div class="club-info">
+                <span class="club-category">Arts</span>
+                <h3 class="club-title">Photography & Media</h3>
+              </div>
+            </div>
+            <p class="club-desc">Capturing campus life moments, photo editing workshops, and hosting annual visual arts exhibitions.</p>
+            <div class="club-stats-bar">
+              <span>👥 110 Members</span>
+              <span>📅 Tuesdays 5:00 PM</span>
+            </div>
+            <div class="club-actions">
+              <a href="club-details.html?id=3" class="btn btn-secondary btn-sm btn-full">View Club</a>
+            </div>
+          </div>
+
+          <!-- Club 4 -->
+          <div class="club-card">
+            <div class="club-header">
+              <div class="club-logo" style="background: linear-gradient(135deg, #7c3aed, #0f172a);">EC</div>
+              <div class="club-info">
+                <span class="club-category">Entrepreneurship</span>
+                <h3 class="club-title">Entrepreneurship Cell</h3>
+              </div>
+            </div>
+            <p class="club-desc">Connecting student founders with mentors, angel investors, pitch deck building, and startup incubation.</p>
+            <div class="club-stats-bar">
+              <span>👥 78 Members</span>
+              <span>📅 Thursdays 5:00 PM</span>
+            </div>
+            <div class="club-actions">
+              <a href="club-details.html?id=4" class="btn btn-secondary btn-sm btn-full">View Club</a>
+            </div>
+          </div>
+
+          <!-- Club 5 -->
+          <div class="club-card">
+            <div class="club-header">
+              <div class="club-logo" style="background: linear-gradient(135deg, #ec4899, #0f172a);">CC</div>
+              <div class="club-info">
+                <span class="club-category">Cultural</span>
+                <h3 class="club-title">Cultural & Performing Arts</h3>
+              </div>
+            </div>
+            <p class="club-desc">Celebrating music, dance, theater, literary arts, and multicultural harmony across campus.</p>
+            <div class="club-stats-bar">
+              <span>👥 210 Members</span>
+              <span>📅 Mondays 5:00 PM</span>
+            </div>
+            <div class="club-actions">
+              <a href="club-details.html?id=5" class="btn btn-secondary btn-sm btn-full">View Club</a>
+            </div>
+          </div>
+
+          <!-- Club 6 -->
+          <div class="club-card">
+            <div class="club-header">
+              <div class="club-logo" style="background: linear-gradient(135deg, #16a34a, #0f172a);">SC</div>
+              <div class="club-info">
+                <span class="club-category">Sports</span>
+                <h3 class="club-title">Sports & Athletics</h3>
+              </div>
+            </div>
+            <p class="club-desc">Promoting athletic sportsmanship, inter-departmental tournaments, marathons, and fitness bootcamps.</p>
+            <div class="club-stats-bar">
+              <span>👥 185 Members</span>
+              <span>📅 Saturdays 7:00 AM</span>
+            </div>
+            <div class="club-actions">
+              <a href="club-details.html?id=6" class="btn btn-secondary btn-sm btn-full">View Club</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="clubs.html" class="btn btn-secondary btn-lg">Explore All Clubs →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Campus Hub? Feature Cards -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Campus Hub?</h2>
+          <p class="section-subtitle">Everything you need to navigate campus events and student communities in one organized portal.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3 class="feature-title">Discover Events</h3>
+            <p class="feature-desc">Search and filter technical workshops, hackathons, sports meets, and cultural fests happening across all campus departments.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3 class="feature-title">Join Clubs</h3>
+            <p class="feature-desc">Connect with peer student groups, attend club meetings, work on collaborative projects, and develop valuable skills.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">Easy Registration</h3>
+            <p class="feature-desc">Instant one-click registration with real-time seat availability updates, personal student dashboard, and status tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Campus Events</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Student Clubs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Active Students</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Registrations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🏛️</div>
+            <span>Campus Hub</span>
+          </a>
+          <p class="footer-desc">
+            The central platform for university student events, club discovery, and campus community engagement.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="clubs.html">Student Clubs</a></li>
+            <li><a href="register.html">Event Registration</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="events.html">Technical Workshops</a></li>
+            <li><a href="events.html">Hackathons</a></li>
+            <li><a href="events.html">Cultural Fests</a></li>
+            <li><a href="events.html">Sports Championships</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Support</h4>
+          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+            📍 Student Activity Center, Building B<br>
+            ✉️ campushub@university.edu<br>
+            📞 +1 (555) 019-2834
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Campus Event & Club Hub. All rights reserved. Software Engineering Student Project.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="#" style="color: #cbd5e1;">Privacy Policy</a>
+          <a href="#" style="color: #cbd5e1;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

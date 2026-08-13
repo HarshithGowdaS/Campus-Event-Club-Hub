@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Campus Events | Campus Event & Club Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🏛️</div>
+        <span>Campus Hub</span>
+      </a>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link active">Events</a>
+        <a href="clubs.html" class="nav-link">Clubs</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="dashboard.html" class="nav-cta">Student Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Header Banner -->
+    <section class="details-hero" style="padding: 3rem 0;">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> <span>Events</span>
+        </div>
+        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Upcoming Campus Events</h1>
+        <p style="color: #cbd5e1; font-size: 1.1rem; max-width: 650px;">
+          Discover technical innovation summits, hackathons, cultural festivals, sports tournaments, and interactive workshops.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content & Filters -->
+    <section class="section">
+      <div class="container">
+        
+        <!-- Filter Toolbar -->
+        <div class="filter-toolbar">
+          <div class="search-box-row">
+            <div class="search-input-group">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="searchEventInput" class="search-input" placeholder="Search events by title, description, or location...">
+            </div>
+
+            <div class="date-filter-group">
+              <span style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted); white-space: nowrap;">Filter Date:</span>
+              <input type="date" id="eventDateFilter" class="date-input">
+            </div>
+
+            <button class="btn btn-secondary btn-sm" id="resetEventFilters" style="white-space: nowrap;">
+              Reset Filters
+            </button>
+          </div>
+
+          <div class="filter-pills" id="eventCategoryFilters">
+            <span style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted); margin-right: 0.5rem;">Categories:</span>
+            <button class="filter-pill active" data-category="All">All</button>
+            <button class="filter-pill" data-category="Technical">Technical</button>
+            <button class="filter-pill" data-category="Cultural">Cultural</button>
+            <button class="filter-pill" data-category="Sports">Sports</button>
+            <button class="filter-pill" data-category="Workshop">Workshop</button>
+            <button class="filter-pill" data-category="Competition">Competition</button>
+          </div>
+        </div>
+
+        <!-- Events Cards Grid -->
+        <div class="cards-grid" id="eventsGrid">
+          <!-- Populated dynamically by js/events.js -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🏛️</div>
+            <span>Campus Hub</span>
+          </a>
+          <p class="footer-desc">
+            The central platform for university student events, club discovery, and campus community engagement.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="clubs.html">Student Clubs</a></li>
+            <li><a href="register.html">Event Registration</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="events.html">Technical Workshops</a></li>
+            <li><a href="events.html">Hackathons</a></li>
+            <li><a href="events.html">Cultural Fests</a></li>
+            <li><a href="events.html">Sports Championships</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Support</h4>
+          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+            📍 Student Activity Center, Building B<br>
+            ✉️ campushub@university.edu<br>
+            📞 +1 (555) 019-2834
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Campus Event & Club Hub. All rights reserved. Software Engineering Student Project.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

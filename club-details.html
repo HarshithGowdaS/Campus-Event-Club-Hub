@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Details | Campus Event & Club Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🏛️</div>
+        <span>Campus Hub</span>
+      </a>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="clubs.html" class="nav-link active">Clubs</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="dashboard.html" class="nav-cta">Student Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="clubDetailsContainer">
+    <!-- Rendered dynamically -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🏛️</div>
+            <span>Campus Hub</span>
+          </a>
+          <p class="footer-desc">
+            The central platform for university student events, club discovery, and campus community engagement.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="clubs.html">Student Clubs</a></li>
+            <li><a href="register.html">Event Registration</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="events.html">Technical Workshops</a></li>
+            <li><a href="events.html">Hackathons</a></li>
+            <li><a href="events.html">Cultural Fests</a></li>
+            <li><a href="events.html">Sports Championships</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Support</h4>
+          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.75rem;">
+            📍 Student Activity Center, Building B<br>
+            ✉️ campushub@university.edu<br>
+            📞 +1 (555) 019-2834
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Campus Event & Club Hub. All rights reserved. Software Engineering Student Project.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const clubId = urlParams.get("id") || 1;
+      const club = getClubById(clubId);
+      const container = document.getElementById("clubDetailsContainer");
+
+      if (!club) {
+        container.innerHTML = `
+          <div class="container section">
+            <div class="empty-state">
+              <h3>Club Not Found</h3>
+              <p>The requested student club could not be located.</p>
+              <a href="clubs.html" class="btn btn-primary btn-sm">Back to Clubs</a>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      document.title = `${club.name} | Campus Club Details`;
+
+      function renderClubPage() {
+        const joinedClubIds = getJoinedClubIds();
+        const isJoined = joinedClubIds.includes(club.id);
+
+        container.innerHTML = `
+          <section class="details-hero">
+            <div class="container">
+              <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span> <a href="clubs.html">Clubs</a> <span>/</span> <span>${club.name}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem;">
+                <div class="club-logo" style="width: 80px; height: 80px; font-size: 2.25rem; background: linear-gradient(135deg, ${club.accentColor || '#1e40af'}, #0f172a);">
+                  ${club.logoText || club.name.substring(0,2)}
+                </div>
+                <div>
+                  <span class="badge badge-primary" style="background: rgba(255,255,255,0.2); color: white; padding: 0.35rem 0.85rem; font-size: 0.8rem;">
+                    ${club.category}
+                  </span>
+                  <h1 style="font-size: 2.75rem; font-weight: 800; line-height: 1.1; margin-top: 0.3rem;">${club.name}</h1>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" style="padding-top: 0;">
+            <div class="container">
+              <div class="details-grid">
+                
+                <!-- Main Content Column -->
+                <div class="details-card-main">
+                  <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">About ${club.name}</h2>
+                  <p style="font-size: 1.05rem; color: var(--text-main); line-height: 1.7; margin-bottom: 2rem;">
+                    ${club.description}
+                  </p>
+
+                  <div style="background-color: var(--primary-light); border-left: 4px solid var(--primary); padding: 1.25rem 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 2.5rem;">
+                    <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">🎯 Our Mission Statement</h3>
+                    <p style="font-size: 0.975rem; color: var(--text-main); font-style: italic;">
+                      "${club.mission || 'To provide a collaborative ecosystem for university students to refine skills, work on real projects, and build professional networks.'}"
+                    </p>
+                  </div>
+
+                  <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem;">Key Activities & Programs</h2>
+                  <ul style="display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2.5rem;">
+                    ${(club.activities || [
+                      "Weekly interactive workshops and peer mentoring labs",
+                      "Hands-on project showcases and capstone assistance",
+                      "Inter-university challenge preparation",
+                      "Guest lectures and industry expert sessions"
+                    ]).map(act => `
+                      <li style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1rem;">
+                        <span style="color: var(--primary); font-weight: 800;">✓</span>
+                        <span>${act}</span>
+                      </li>
+                    `).join("")}
+                  </ul>
+
+                  <div style="padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Faculty Guidance</h3>
+                    <div style="display: flex; align-items: center; gap: 1rem; background-color: var(--bg-main); padding: 1rem 1.25rem; border-radius: var(--radius-md);">
+                      <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--primary-dark); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                        👨‍🏫
+                      </div>
+                      <div>
+                        <div style="font-weight: 700; color: var(--text-main);">${club.facultyCoordinator}</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Faculty Coordinator & Advisor</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sidebar Column -->
+                <div>
+                  <div class="details-sidebar-card">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color);">
+                      Club Information
+                    </h3>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem;">
+                      <div>
+                        <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Active Membership</div>
+                        <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-top: 0.2rem;">
+                          👥 ${club.members} Students
+                        </div>
+                      </div>
+
+                      <div>
+                        <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Weekly Meeting Day</div>
+                        <div style="font-size: 1rem; font-weight: 600; color: var(--text-main); margin-top: 0.2rem;">
+                          📅 ${club.meetingDay}
+                        </div>
+                      </div>
+
+                      <div>
+                        <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">Meeting Location</div>
+                        <div style="font-size: 1rem; font-weight: 600; color: var(--text-main); margin-top: 0.2rem;">
+                          📍 ${club.meetingLocation}
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-lg btn-full ${isJoined ? 'btn-danger' : 'btn-primary'}" id="detailJoinToggleBtn" style="margin-bottom: 1rem;">
+                      ${isJoined ? 'Leave Club' : 'Join Club Now'}
+                    </button>
+
+                    <a href="register.html?clubId=${club.id}" class="btn btn-secondary btn-sm btn-full">
+                      Register For Club Event
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        `;
+
+        // Attach Join / Leave Event Listener
+        const joinBtn = document.getElementById("detailJoinToggleBtn");
+        if (joinBtn) {
+          joinBtn.addEventListener("click", () => {
+            if (isJoined) {
+              leaveClubById(club.id);
+              showToast(`You have left ${club.name}.`, "info");
+            } else {
+              joinClubById(club.id);
+              showToast(`Welcome! You are now a member of ${club.name}.`, "success");
+            }
+            renderClubPage();
+          });
+        }
+      }
+
+      renderClubPage();
+    });
+  </script>
+</body>
+</html>
